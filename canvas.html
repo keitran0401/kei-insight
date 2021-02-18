@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Canvas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
+    <link href="css/canvas.css" type="text/css" rel="stylesheet">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const canvas = document.querySelector('#draw');
+            const ctx = canvas.getContext('2d')
+            let isMouseDown = false;
+
+            function draw(x, y) {
+                const circle = new Path2D();
+                circle.arc(x, y, 25, 0, 2 * Math.PI);
+                ctx.fill(circle)
+            }
+
+            canvas.addEventListener('mousedown', (e) => {
+                isMouseDown = true;
+            });
+
+            canvas.addEventListener('mouseup', (e) => {
+                isMouseDown = false;
+            });
+
+            canvas.addEventListener('mousemove', (e) => {
+                if (!isMouseDown) return;
+                const { clientX, clientY } = e
+                const rect = canvas.getBoundingClientRect();
+                draw(clientX - rect.left, clientY - rect.top)
+            });
+
+            const colorPickers = document.querySelectorAll('.color-picker');
+            colorPickers.forEach(colorPicker => {
+                colorPicker.addEventListener('click', (e) => {
+                    ctx.fillStyle = e.target.style.backgroundColor;
+                })
+            });
+
+            document.querySelector('#btn-clear').addEventListener('click', (e) => {
+                ctx.clearRect(0, 0, 600, 600)
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="control">
+        <div class="color-picker" style="background: red"></div>
+        <div class="color-picker" style="background: yellow"></div>
+        <div class="color-picker" style="background: orange"></div>
+        <div class="color-picker" style="background: green"></div>
+        <div class="color-picker" style="background: blue"></div>
+        <div class="color-picker" style="background: black"></div>
+    </div>
+    <canvas id="draw" width="600" height="600"></canvas>
+    <button id="btn-clear">Clear</button>
+</body>
+
+</html>

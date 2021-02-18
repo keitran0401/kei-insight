@@ -1,0 +1,95 @@
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal .modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: auto;
+  width: 30%;
+  animation: animatetop 1s;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2;
+}
+.modal .modal-content .modal-header-footer {
+  padding: 20px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.modal .modal-content .modal-header-footer .close {
+  color: white;
+  float: right;
+  font-weight: bold;
+}
+.modal .modal-content .modal-header-footer .close:hover,
+.modal .modal-content .modal-header-footer .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .modal-content .modal-header-footer #btn-checkout {
+  width: 100%;
+  background-color: grey;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+}
+.modal .modal-content .modal-body {
+  padding: 20px 16px;
+}
+.modal .modal-content .modal-body .order-item {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.modal .modal-content .modal-body .order-item .item-name {
+  flex-basis: 10rem;
+}
+.modal .modal-content .modal-body .order-item .item-quantity {
+  flex-basis: 10rem;
+}
+.modal .modal-content .modal-body .order-item .item-quantity input {
+  width: 30px;
+  margin-left: 0.5rem;
+  border: none;
+}
+.modal .modal-content .modal-body .order-item .item-price {
+  margin-left: auto;
+}
+.modal .modal-content .modal-body #btn-addfood {
+  border: 1px solid grey;
+  width: 20rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.modal .modal-content .modal-body .order-summary {
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background-color: #f4f4f6;
+}
+.modal .modal-content .modal-body .order-summary .money {
+  float: right;
+}
+
+/*# sourceMappingURL=receipt.css.map */

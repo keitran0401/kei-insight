@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <link href="css/receipt.css" type="text/css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Search Google Icon
+            document.querySelector('#search-icon').addEventListener('click', () => {
+                searchForm = document.querySelector("#search-form")
+                if (searchForm.style.display === "block") {
+                    searchForm.style.display = "none";
+                } else {
+                    searchForm.style.display = "block";
+                }
+            })
+
+            // Popup window for Receipt
+            document.getElementById("myBtn").onclick = function () {
+                document.getElementById("myModal").style.display = "block";
+            }
+            document.getElementsByClassName("close")[0].onclick = function () {
+                document.getElementById("myModal").style.display = "none";
+            }
+            window.onclick = function (event) {
+                if (event.target == document.getElementById("myModal")) {
+                    document.getElementById("myModal").style.display = "none";
+                }
+            }
+
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                <p>A diamond is forever</p>
+            </div>
+            <form id="search-form" action="https://www.google.com/search" method="GET">
+                <input name="q" type="text" placeholder="Search...">
+            </form>
+            <nav class="topnav">
+                <a href="#"><i class="fa fa-search" id="search-icon"></i></a>
+                <a href="canvas.html">Canvas Drawing</a>
+                <a href="#" id="myBtn">Order from KFC</a>
+                <a href="form.html">Survey Form</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <div class="text">
+                <h1>Don't ignore your dreams</h1>
+                <p><strong>The 5 regrets </strong>paint a portrait of post-industrial man, who shrinks himself into a
+                    shape
+                    that fits his circumstances, then turns dutifully till he stops.
+                    man, who shrinks himself into a shape that fits his circumstances, then turns dutifully till he
+                    stops.
+                </p>
+            </div>
+            <div class="btn">
+                <a href="#" id="btn-green">How it works</a>
+                <a href="#" id="btn-blue">Join us</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header-footer">
+                        <span class="close">&times;</span>
+                        <h1>Your order from KFC</h1>
+                    </div>
+                    <div class="modal-body">
+                        <ul id="order-items">
+                            <li class="order-item">
+                                <span class="item-name">Pizza 001</span>
+                                <span class="item-quantity">
+                                    <button>-</button>
+                                    <input type="number" value="1" />
+                                    <button>+</button>
+                                </span>
+                                <span class="item-price">
+                                    <span>$7.99</span>
+                                    <button class="delete btn-delete">X</button>
+                                </span>
+                            </li>
+                            <li class="order-item">
+                                <span class="item-name">Pizza 001</span>
+                                <span class="item-quantity">
+                                    <button>-</button>
+                                    <input type="number" value="1" />
+                                    <button>+</button>
+                                </span>
+                                <span class="item-price">
+                                    <span>$7.99</span>
+                                    <button class="delete btn-delete">X</button>
+                                </span>
+                            </li>
+                            <li class="order-item">
+                                <span class="item-name">Pizza 001</span>
+                                <span class="item-quantity">
+                                    <button>-</button>
+                                    <input type="number" value="1" />
+                                    <button>+</button>
+                                </span>
+                                <span class="item-price">
+                                    <span>$7.99</span>
+                                    <button class="delete btn-delete">X</button>
+                                </span>
+                            </li>
+                        </ul>
+                        <button id="btn-addfood">Add Food</button>
+                        <div class="order-summary">
+                            <p>Subtotal <span id="sub-total" class="money">$15.99</span></p>
+                            <p>Shipping <span id="shipping" class="money">$15.99</span></p>
+                            <p>Total <span id="total" class="money">$15.99</span></p>
+                        </div>
+                    </div>
+                    <div class="modal-header-footer">
+                        <button id="btn-checkout">Check Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blocks">
+                <div class="block">
+                    <div class="image"><img src="images/photo1.jpg" alt="photo1"></div>
+                    <div class="person">
+                        <div class="photo"><img src="images/person1.jpg" alt=""></div>
+                        <div class="text">
+                            <div class="phrase">You neglect your friends</div>
+                            <div class="info">Valerie Adams. Moldova. 19.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="image"><img src="images/photo2.jpg" alt="photo2"></div>
+                    <div class="person">
+                        <div class="photo"><img src="images/person2.jpg" alt=""></div>
+                        <div class="text">
+                            <div class="phrase">You forget your dreams</div>
+                            <div class="info">Robert. Italy. 38.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="image"><img src="images/photo3.jpg" alt="photo3"></div>
+                    <div class="person">
+                        <div class="photo"><img src="images/person3.jpg" alt=""></div>
+                        <div class="text">
+                            <div class="phrase">You suppress your feelings</div>
+                            <div class="info">Sergei. Spain. 25.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news">
+                <div class="info">
+                    <div class="img">
+                        <a href="#"><img src="images/news1.jpg" alt="news1"></a>
+                    </div>
+                    <div class="text">
+                        <time>Oct 4</time>
+                        <p><a href="#">Want to change the World? Find out here in just a sec.</a></p>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <div class="img">
+                        <a href="#"><img src="images/news2.jpg" alt="news2"></a>
+                    </div>
+                    <div class="text">
+                        <time>Oct 8</time>
+                        <p><a href="#">But how do you avoid mistakes you make by default?</a></p>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <div class="img">
+                        <a href="#"><img src="images/news3.jpg" alt="news3"></a>
+                    </div>
+                    <div class="text">
+                        <time>Oct 2</time>
+                        <p><a href="#">Ideally you transform your life so it has other defaults.</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="featured">
+                <a href="#"><img src="images/logo-new-texas-times.png" height="28" width="262"
+                        alt="logo-new-texas-times"></a>
+                <a href="#"><img src="images/logo-wooden.png" height="29" width="147" alt="logo-wooden"></a>
+                <a href="#"><img src="images/logo-vremya.png" height="22" width="112" alt="logo-vremya"></a>
+                <a href="#"><img src="images/logo-open-book.png" height="29" width="217" alt="logo-open-book"></a>
+                <a href="#"><img src="images/logo-twitter.png" height="29" width="36" alt="logo-twitter"></a>
+            </nav>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="brand">
+                <div class="column">
+                    <h1>MAIN</h1>
+                    <nav class="bottomnav">
+                        <a href="#">Start Here</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Meet Us</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contact</a>
+                    </nav>
+                </div>
+                <div class="column">
+                    <h1>COMPANY</h1>
+                    <nav class="bottomnav">
+                        <a href="#">About</a>
+                        <a href="#">Help</a>
+                        <a href="#">Support</a>
+                        <a href="#">Jobs</a>
+                        <a href="#">Directory</a>
+                    </nav>
+                </div>
+                <div class="column">
+                    <h1>SOCIETY</h1>
+                    <nav class="bottomnav">
+                        <a href="#">Meetups</a>
+                        <a href="#">Handbook</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">API</a>
+                        <a href="#">Equipment</a>
+                    </nav>
+                </div>
+                <div class="column">
+                    <h1>MORE</h1>
+                    <nav class="bottomnav">
+                        <a href="#">Meetups</a>
+                        <a href="#">Handbook</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">API</a>
+                        <a href="#">Equipment</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2020 Insight ltd.</p>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="receipt.js" type="text/javascript"></script>
+</body>
+
+</html>

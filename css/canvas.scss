@@ -1,0 +1,29 @@
+body {
+    width: 700px;
+    height: 600px;
+    border: 1px solid black;
+    display: flex;
+    position: relative;
+}
+
+.control {
+    flex: 1;
+    border-right: 1px solid black;
+
+    .color-picker {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+    }
+}
+
+#draw {
+    cursor: pointer;
+}
+
+#btn-clear {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+}
